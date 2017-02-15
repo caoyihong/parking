@@ -1,4 +1,6 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java"  pageEncoding="UTF-8"  %>
+<!-- 包含通用頭 -->
+<%@ include file="./pages/common/header.jsp"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"  %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,5 +17,8 @@
     <input type="text" name="carportno" placeholder="1">
     <input type="submit" value="确定">
 </form>
+
+<!-- 包含通用尾 -->
+<jsp:include page="./pages/common/footer.jsp" />
 </body>
 </html>
