@@ -60,5 +60,6 @@
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.8.1" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.8.0" level="project" />
     <orderEntry type="library" name="QRCode" level="project" />
+    <orderEntry type="library" name="QRCode" level="project" />
   </component>
 </module>
