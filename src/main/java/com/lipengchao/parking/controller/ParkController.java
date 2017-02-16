@@ -23,7 +23,7 @@ public class ParkController {
     public String parkInfo(HttpServletRequest request, Model model){
         String strParkId = request.getParameter("parkId");
         Long parkId = 1l;
-        if (parkId != null){
+        if (strParkId != null){
             parkId = Long.valueOf(strParkId);
         }
         Map parkInfo = parkService.parkInfo(parkId);

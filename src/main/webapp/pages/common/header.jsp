@@ -7,7 +7,7 @@
 <html>
     <head>
         <link href="${ctx}/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" >
-        <link href="${ctx}/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet" >
+        <link href="${ctx}/static/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" >
         <link href="${ctx}/static/css/common.css" rel="stylesheet" >
         <script src="${ctx}/static//bootstrap/js/jquery-1.7.2.min.js"></script>
         <script src="${ctx}/static/bootstrap/js/bootstrap.min.js"></script>

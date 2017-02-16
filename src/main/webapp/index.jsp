@@ -5,9 +5,11 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>基于二维码的停车位引导系统</title>
 </head>
 <body>
+<div class="container">
 <h2>基于二维码的停车位引导系统</h2>
 <br/><br/><br/>
 <a href="${ctx}/code/parkcode">下载车库二维码</a>
@@ -17,7 +19,7 @@
     <input type="text" name="carportno" placeholder="1">
     <input type="submit" value="确定">
 </form>
-
+</div>
 <!-- 包含通用尾 -->
 <jsp:include page="./pages/common/footer.jsp" />
 </body>
