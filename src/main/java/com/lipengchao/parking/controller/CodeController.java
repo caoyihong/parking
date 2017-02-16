@@ -1,5 +1,6 @@
 package com.lipengchao.parking.controller;
 
+import com.lipengchao.parking.common.Param;
 import com.lipengchao.parking.util.TwoDimensionCodeUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +23,7 @@ public class CodeController {
     @RequestMapping("/parkcode")
     public void parkCode(HttpServletRequest request, HttpServletResponse response){
         TwoDimensionCodeUtil codeUtil = new TwoDimensionCodeUtil();
-        String content = "www.baidu.com";
+        String content = Param.URL+"park/parkInfo";
         String path = request.getSession().getServletContext().getRealPath("static/file/");
         String filePath = path+"cc.png";
         System.out.println(filePath);
@@ -30,7 +31,7 @@ public class CodeController {
         File file = new File(filePath);
         if (file.exists()){
             response.setContentType("application/force-download");
-            response.addHeader("Content-Disposition","attachment;fileName="+"停车场.png");//设置文件名
+            response.addHeader("Content-Disposition","attachment;fileName="+"cc.png");//设置文件名
             byte[] buffer = new byte[1024];
             FileInputStream fis = null;
             BufferedInputStream bis = null;
