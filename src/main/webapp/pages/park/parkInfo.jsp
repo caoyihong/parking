@@ -8,19 +8,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>基于二维码的停车位引导系统</title>
 </head>
-<body class="container">
-<div class="container">
+<body >
+<div class="container col-center-block">
+
     <div class="row">
-        <div class="col-xs-6 col-md-3">
-            <a href="#" class="thumbnail">
-                <img src="..." alt="...">
-            </a>
-        </div>
-        ...
+        <div class="col-sm-2"><span class="glyphicon glyphicon-ok-circle btn-danger">车位1</span> </div>
+        <div class="col-sm-2">.col-md-1</div>
+        <div class="col-sm-2">.col-md-1</div>
+        <div class="col-sm-2">.col-md-1</div>
+        <div class="col-sm-2">.col-md-1</div>
     </div>
 </div>
 <br><br><br><br><br><br>
 <!-- 包含通用尾 -->
 <jsp:include page="../common/footer.jsp" />
 </body>
+<%--<script>--%>
+    <%--$(function () {--%>
+        <%--alert("aa");--%>
+    <%--});--%>
+<%--</script>--%>
 </html>
