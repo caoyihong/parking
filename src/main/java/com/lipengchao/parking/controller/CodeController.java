@@ -73,7 +73,7 @@ public class CodeController {
     public void carPortCode(HttpServletRequest request, HttpServletResponse response){
         String carportcodeno = request.getParameter("carportno");
         TwoDimensionCodeUtil codeUtil = new TwoDimensionCodeUtil();
-        String content = "www.baidu.com";
+        String content = Param.URL + "carPort/carPortInfo";
         String path = request.getSession().getServletContext().getRealPath("static/file/");
         String filePath = path+"cw"+carportcodeno+".png";
         System.out.println(filePath);
