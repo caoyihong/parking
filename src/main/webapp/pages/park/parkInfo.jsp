@@ -12,11 +12,11 @@
 <div class="container col-center-block">
 
     <div class="row">
-        <div class="col-sm-2"><span class="glyphicon glyphicon-ok-circle btn-danger">车位1</span> </div>
-        <div class="col-sm-2">.col-md-1</div>
-        <div class="col-sm-2">.col-md-1</div>
-        <div class="col-sm-2">.col-md-1</div>
-        <div class="col-sm-2">.col-md-1</div>
+        <div class="col-xs-2"><span class="glyphicon glyphicon-ok-circle btn-danger">车位1</span> </div>
+        <div class="col-xs-2">车位2</div>
+        <div class="col-xs-2">车位3</div>
+        <div class="col-xs-2">车位4</div>
+        <div class="col-xs-2"><span class="glyphicon glyphicon-ok-circle btn-danger">车位5</span></div>
     </div>
 </div>
 <br><br><br><br><br><br>
