@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 80
-Source Server Version : 50630
-Source Host           : 192.168.1.80:3306
+Source Server         : localhost_3306
+Source Server Version : 50621
+Source Host           : 127.0.0.1:3306
 Source Database       : parking
 
 Target Server Type    : MYSQL
-Target Server Version : 50630
+Target Server Version : 50621
 File Encoding         : 65001
 
-Date: 2017-02-16 17:51:12
+Date: 2017-02-26 19:31:53
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -22,8 +22,8 @@ DROP TABLE IF EXISTS `t_car`;
 CREATE TABLE `t_car` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `user_id` bigint(20) NOT NULL,
-  `car_name` varchar(50) CHARACTER SET utf8mb4 NOT NULL,
-  `info` varchar(200) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `car_name` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `info` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
   `create_time` datetime DEFAULT NULL,
   `update_time` datetime DEFAULT NULL,
   `enabled` tinyint(4) DEFAULT '1',
@@ -45,7 +45,7 @@ DROP TABLE IF EXISTS `t_carport`;
 CREATE TABLE `t_carport` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `park_id` bigint(20) DEFAULT NULL,
-  `info` varchar(200) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `info` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
   `status` tinyint(4) DEFAULT '0' COMMENT '0 未占用 1 已使用',
   `create_time` datetime DEFAULT NULL,
   `update_time` datetime DEFAULT NULL,
@@ -83,8 +83,8 @@ INSERT INTO `t_carport` VALUES ('20', '1', '车位20', '0', '2017-02-16 17:33:44
 DROP TABLE IF EXISTS `t_park`;
 CREATE TABLE `t_park` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `park_name` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `info` varchar(200) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `park_name` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `info` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
   `park_num` int(20) DEFAULT NULL,
   `create_time` datetime DEFAULT NULL,
   `update_time` datetime DEFAULT NULL,
@@ -123,9 +123,9 @@ CREATE TABLE `t_parkinginfo` (
 DROP TABLE IF EXISTS `t_userinfo`;
 CREATE TABLE `t_userinfo` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `user_name` varchar(50) CHARACTER SET utf8mb4 NOT NULL,
-  `password` varchar(50) CHARACTER SET utf8mb4 NOT NULL,
-  `telephone` varchar(20) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `user_name` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `password` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `telephone` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
   `sex` tinyint(4) DEFAULT NULL,
   `account` bigint(20) DEFAULT NULL,
   `create_time` datetime DEFAULT NULL,
