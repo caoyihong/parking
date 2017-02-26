@@ -14,9 +14,9 @@
 <br/><br/><br/>
 <a href="${ctx}/code/parkcode">下载车库二维码</a>
 <br><br><br><br>
-<form action="localhost:8080/code/carport" method="get">
-    <b>请输入指定停车位，过去对应的二维码</b>
-    <input type="text" name="carportno" placeholder="1">
+<form action="${ctx}/code/carportcode" method="get">
+    <b>请输入指定停车位，下载对应的二维码</b>
+    <input type="text" name="carportno" placeholder="1" value="1">
     <input type="submit" value="确定">
 </form>
 </div>

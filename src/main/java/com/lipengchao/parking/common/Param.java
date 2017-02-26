@@ -6,6 +6,6 @@ package com.lipengchao.parking.common;
  */
 public class Param {
 
-    public static final String URL="http://localhost:8080/parking/";
+    public static final String URL="http://192.168.1.103:8080/parking/";
 //    public static final String URL="http://59.110.142.139:8080/parking/";//生产环境
 }

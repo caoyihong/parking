@@ -28,6 +28,6 @@ public class CarPortController {
     public String carPortInfo(@PathVariable("carPortId") Long carPortId, Model model){
         Map map = carPortService.getCarPortInfo(carPortId);
         model.addAttribute("carPortInfo", map);
-        return "";
+        return "carport/carPortInfo";
     }
 }

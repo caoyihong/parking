@@ -30,7 +30,7 @@ public class CarController {
         Long carId = Long.valueOf(request.getParameter("carId"));//车ID
         Integer result = carService.parking(carId, carPortId);
         model.addAttribute("result", result);
-        return null;
+        return "success";
     }
 
     /**
@@ -39,12 +39,13 @@ public class CarController {
      * @param model
      * @return
      */
+    @RequestMapping("/taking")
     public String taking(HttpServletRequest request, Model model){
         Long carPortId = Long.valueOf(request.getParameter("carPortId"));//车位id
         Long carId = Long.valueOf(request.getParameter("carId"));//车ID
         ParkingInfo parkingInfo = carService.taking(carId, carPortId);
         model.addAttribute("parkingInfo", parkingInfo);
-        return null;
+        return "success";
     }
 
 }

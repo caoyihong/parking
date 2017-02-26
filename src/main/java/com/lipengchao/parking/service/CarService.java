@@ -31,6 +31,15 @@ public class CarService {
         if (carport == null || carport.getStatus().intValue() == 1){//该车位不可用(被占用)
             return 2;
         }
+        //检查该车是否已经停在别处
+        ParkingInfoExample parkingInfoExample = new ParkingInfoExample();
+        ParkingInfoExample.Criteria criteria = parkingInfoExample.createCriteria();
+        criteria.andCarIdEqualTo(carId);
+        criteria.andStatusEqualTo((byte)1);
+        List<ParkingInfo> parkingInfos = parkingInfoMapper.selectByExample(parkingInfoExample);
+        if (parkingInfos != null && parkingInfos.size() > 0){
+            return 2;
+        }
 //        将车位信息设为已使用
         carport.setStatus((byte)1);
         carport.setUpdateTime(new Date());
@@ -64,9 +73,9 @@ public class CarService {
             return null;
         }
         parkingInfo.setLeaveTime(new Date());
-        Long duration = parkingInfo.getArriveTime().getTime() - parkingInfo.getLeaveTime().getTime();
+        Long duration = parkingInfo.getLeaveTime().getTime() - parkingInfo.getArriveTime().getTime();
         parkingInfo.setDuration(duration);
-        parkingInfo.setExpense(duration/360000);//一小时10块钱
+        parkingInfo.setExpense(((duration/3600000)+1) * 10);//一小时10块钱
         parkingInfo.setStatus((byte)2);//计费结束
         parkingInfoMapper.updateByPrimaryKeySelective(parkingInfo);//更新停车信息
         return parkingInfo;

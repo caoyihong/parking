@@ -43,9 +43,9 @@ public class CarPortService {
             List<ParkingInfo> parkingInfos = parkingInfoMapper.selectByExample(parkingInfoExample);
             ParkingInfo parkingInfo = parkingInfos.get(0);
             parkingInfo.setLeaveTime(new Date());
-            Long duration = parkingInfo.getArriveTime().getTime() - parkingInfo.getLeaveTime().getTime();
+            Long duration = parkingInfo.getLeaveTime().getTime() - parkingInfo.getArriveTime().getTime();
             parkingInfo.setDuration(duration);
-            parkingInfo.setExpense(duration/360000);//截止当前时间 供展示使用
+            parkingInfo.setExpense(((duration/3600000)+1) * 10);//截止当前时间 供展示使用
             Car car = carMapper.selectByPrimaryKey(parkingInfo.getCarId());
 
             result.put("arriveTime", parkingInfo.getArriveTime());
@@ -53,6 +53,7 @@ public class CarPortService {
             result.put("expense", parkingInfo.getExpense());
             result.put("carName", car.getCarName());
             result.put("carInfo", car.getInfo());
+            result.put("carId", car.getId());
         }
         return result;
     }
