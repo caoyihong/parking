@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -25,5 +26,28 @@ public class UserController {
         UserInfo userInfo = userService.getUserById(userId);
         model.addAttribute("user", userInfo);
         return "showUser";
+    }
+
+    @ResponseBody
+    @RequestMapping("/userRegister")
+    public void userRegister(String userName, String password) throws Exception{
+        try{
+            userService.userRegister(userName, password);
+        }catch (Exception e){
+            throw new Exception("服务器出错，请稍后重试");
+        }
+    }
+    @ResponseBody
+    @RequestMapping("/userLogin")
+    public UserInfo userLogin(String userName, String password) throws Exception{
+        try{
+            UserInfo userInfo = userService.userLogin(userName,password);
+            if (userInfo == null){
+                throw new Exception("账号不存在");
+            }
+            return userInfo;
+        }catch (Exception e){
+            throw new Exception("账号或密码错误");
+        }
     }
 }
