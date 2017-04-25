@@ -39,9 +39,9 @@ public class UserController {
     }
     @ResponseBody
     @RequestMapping("/userLogin")
-    public UserInfo userLogin(String userName, String password) throws Exception{
+    public UserInfo userLogin(String userName, String password, Integer height, Integer weight) throws Exception{
         try{
-            UserInfo userInfo = userService.userLogin(userName,password);
+            UserInfo userInfo = userService.userLogin(userName,password, height, weight);
             if (userInfo == null){
                 throw new Exception("账号不存在");
             }
